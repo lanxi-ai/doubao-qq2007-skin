@@ -1,0 +1,73 @@
+{
+  "manifest_version": 3,
+  "name": "豆包皮肤·QQ2007版",
+  "version": "0.2.3",
+  "description": "为豆包网页版添加怀旧配色、头像资料、本机娱乐等级及回复提示音。第三方扩展，等级仅在本机累计，不影响QQ账号。",
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "32": "assets/icons/icon32.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  "minimum_chrome_version": "120",
+  "permissions": [
+    "storage",
+    "alarms",
+    "idle"
+  ],
+  "host_permissions": [
+    "https://www.doubao.com/chat/*",
+    "https://doubao.com/chat/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "豆包皮肤·QQ2007版",
+    "default_icon": {
+      "16": "assets/icons/icon16.png",
+      "32": "assets/icons/icon32.png",
+      "48": "assets/icons/icon48.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.doubao.com/chat/*",
+        "https://doubao.com/chat/*"
+      ],
+      "js": [
+        "site-adapter.js",
+        "retro-icons.js",
+        "avatar-catalog.js",
+        "avatars.js",
+        "profile.js",
+        "feedback.js",
+        "decor.js",
+        "nudge.js",
+        "panel.js",
+        "reply-watch.js",
+        "content.js"
+      ],
+      "css": [
+        "theme.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/*.png",
+        "assets/avatars/*",
+        "assets/audio/*.wav"
+      ],
+      "matches": [
+        "https://www.doubao.com/*",
+        "https://doubao.com/*"
+      ]
+    }
+  ]
+}

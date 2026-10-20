@@ -1,0 +1,47 @@
+# 本地环境与凭据；忽略规则不能移除已经被跟踪的文件。
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+credentials-*.json
+client_secret*.json
+secrets/
+
+# 依赖、缓存、日志与临时产物。
+node_modules/
+.cache/
+coverage/
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# 浏览器个人数据与本地开发环境。
+.vscode/
+.idea/
+.codex/
+.playwright/
+playwright-report/
+test-results/
+browser-profile*/
+chrome-profile*/
+edge-profile*/
+
+# 发布包只作为独立发布附件，不纳入源码目录。
+*.zip
+*.crx
+*.xpi
+dist/
+build/
+
+# 系统文件。
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
